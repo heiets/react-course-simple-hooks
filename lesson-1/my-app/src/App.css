@@ -56,6 +56,16 @@
   margin-left: 0;
 }
 
+.ActionButtonWrap {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.ActionButton {
+  background: #fff;
+  border: 1px solid black;
+}
+
 .MainInfo {
   display: flex;
   flex-direction: column;

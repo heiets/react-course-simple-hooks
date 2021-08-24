@@ -6,13 +6,17 @@ import { Input } from './Input';
 import { CardList } from './CardList';
 import { useCitiesList } from './hooks/useCitiesList';
 
+export const GlobalContext = React.createContext();
+
 function App() {
-  const [citiesList, setCitiesList] = useCitiesList();
+  const [state, dispatch] = useCitiesList();
   return (
-    <div className="Main">
-      <Input setCitiesList={setCitiesList} />
-      <CardList citiesList={citiesList} />
-    </div>
+    <GlobalContext.Provider value={{ state, dispatch }}>
+      <div className="Main">
+        <Input />
+        <CardList />
+      </div>
+    </GlobalContext.Provider>
   );
 }
 
