@@ -40,6 +40,12 @@
   display: flex;
 }
 
+.Select {
+  margin-bottom: 24px;
+  width: 100%;
+  padding: 4px 8px;
+} 
+
 .Card {
   width: 200px;
   height: fit-content;
