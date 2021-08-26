@@ -13,6 +13,29 @@ export class CardList extends React.Component {
         this.handleOnChange = this.handleOnChange.bind(this);
     }
 
+    componentDidMount() {
+        console.log('componentDidMount');
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        console.log('componentDidUpdate');
+        console.log('prevProps', prevProps);
+        console.log('this.props', this.props);
+        console.log('prevState', prevState);
+        console.log('this.state', this.state);
+        if (this.state.orderBy !== prevState.orderBy) {
+            console.log('state has changed');
+        }
+    }
+
+    componentWillUnmount() {
+        console.log('componentWillUnmount');
+    }
+
+    shouldComponentUpdate() {
+        return false;
+    }
+
     handleOnChange(event) {
         this.setState({
             orderBy: event.target.value,

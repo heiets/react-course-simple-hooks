@@ -14,7 +14,7 @@ function App() {
     <GlobalContext.Provider value={{ state, dispatch }}>
       <div className="Main">
         <Input />
-        <CardList citiesList={state.citiesList}/>
+        {state.citiesList.length && <CardList citiesList={state.citiesList}/>}
       </div>
     </GlobalContext.Provider>
   );
