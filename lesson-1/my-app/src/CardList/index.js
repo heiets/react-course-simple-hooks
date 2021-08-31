@@ -1,10 +1,11 @@
 import React from 'react';
 
 import { Card } from '../Card';
+import { withGlobalState } from '../hocs/withGlobalState';
 
 import '../App.css';
 
-export class CardList extends React.Component {
+class CardListNoState extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -44,7 +45,7 @@ export class CardList extends React.Component {
 
     render() {
         const { orderBy } = this.state;
-        const { citiesList } = this.props;
+        const { citiesList } = this.props.state;
         let sortedCitiesList = citiesList.sort();
         if (orderBy === 'desc') {
             sortedCitiesList.reverse();
@@ -64,3 +65,5 @@ export class CardList extends React.Component {
         )
     }
 }
+
+export const CardList = withGlobalState(CardListNoState);
