@@ -56,6 +56,8 @@
   color: #fff;
   margin-left: 24px;
   box-shadow: 3px 3px 12px 1px rgba(0,0,0,0.25);
+  text-decoration: none;
+  display: block;
 }
 
 .Card:first-child {
@@ -94,7 +96,7 @@
   font-weight: 500;
 }
 
-.Temperature::after {
+.TemperatureIcon::after {
   content: "°";
 }
 
@@ -107,3 +109,35 @@
 }
 
 /* Card finish */
+
+/* SingleCity start */
+
+.SingleCityWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.DailyCards {
+  margin-top: 24px;
+  display: flex;
+  overflow-x: scroll;
+  width: 100%;
+  padding: 20px;
+}
+
+.DailyCard {
+  background-color: #3A8AC0;
+  border-radius: 12px;
+  margin-left: 8px;
+  box-shadow: 3px 3px 12px 1px rgba(0,0,0,0.25);
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+}
+
+.TemperatureIcon::after {
+  content: "°";
+}
+
+/* SingleCity finish */
