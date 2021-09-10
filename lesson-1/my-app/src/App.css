@@ -140,4 +140,14 @@
   content: "°";
 }
 
+.GoBack {
+  color: #fff;
+  margin-bottom: 24px;
+  text-decoration: none;
+}
+
+.GoBack:hover {
+  text-decoration: underline;
+}
+
 /* SingleCity finish */

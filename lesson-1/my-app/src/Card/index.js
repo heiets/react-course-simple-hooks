@@ -37,7 +37,6 @@ const CardNoMemo = ({ city, setCityCoord }) => {
         })
         history.push('/home');
     };
-    console.log('isHome', isHome);
     if (isHome) {
         return (
             <Link to={`/city/${city.toLowerCase()}`} className="Card">
