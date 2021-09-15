@@ -1,6 +1,7 @@
 import React, { useRef, useContext } from 'react';
 
 import { GlobalContext } from '../App';
+import { InputTag } from './InputTag';
 
 import '../App.css';
 
@@ -43,7 +44,7 @@ export const Input = () => {
 
     return (
         <div className="InputWrap">
-            <input className="Input" onChange={handleOnChange} value={inputValue} ref={inputRef} />
+            <InputTag {...{ handleOnChange,inputValue, inputRef }} />
             {
                 editingCity
                     ?

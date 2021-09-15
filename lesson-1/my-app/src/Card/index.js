@@ -17,29 +17,57 @@ const CardNoMemo = ({ city, setCityCoord }) => {
                 lon: data.coord.lon,
             });
         }
-    }, [data, setCityCoord])
-    if (!data) return null;
-    const { name, weather, main } = data;
-    const { description, icon } = weather[0];
-    const { temp, humidity, feels_like } = main;
+    }, [data, setCityCoord]);
 
-    const handleOnDelete = () => {
+    const handleOnDelete = (event) => {
+        event.preventDefault();
+        event.stopPropagation();
         dispatch({
             type: 'DELETE_CITY',
             payload: city,
         })
     };
 
-    const handleOnEdit = () => {
+    const handleOnEdit = (event) => {
+        event.preventDefault();
+        event.stopPropagation();
         dispatch({
             type: 'EDIT_CITY',
             payload: city,
         })
         history.push('/home');
     };
+
+    const handleOnLinkClick = (event) => {
+        event.preventDefault();
+        dispatch({
+            type: 'EDIT_CITY_DONE',
+            payload: city,
+        })
+    };
+
+    if (data === null) {
+        return (
+            <div className="Card">
+                <div className="ActionButtonWrap">
+                    <button className="ActionButton" onClick={handleOnEdit}>edit</button>
+                    <button className="ActionButton" onClick={handleOnDelete}>X</button>
+                </div>
+                <div className="MainInfo">
+                    <div className="Title">{city}</div>
+                    <div className="Description">Not found</div>
+                </div>
+            </div>
+        )
+    }
+    if (!data) return null;
+    const { name, weather, main } = data;
+    const { description, icon } = weather[0];
+    const { temp, humidity, feels_like } = main;
+
     if (isHome) {
         return (
-            <Link to={`/city/${city.toLowerCase()}`} className="Card">
+            <Link to={`/city/${city.toLowerCase()}`} onClick={handleOnLinkClick} className="Card">
                 <div className="ActionButtonWrap">
                     <button className="ActionButton" onClick={handleOnEdit}>edit</button>
                     <button className="ActionButton" onClick={handleOnDelete}>X</button>

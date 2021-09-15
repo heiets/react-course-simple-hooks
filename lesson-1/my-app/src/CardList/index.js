@@ -5,7 +5,7 @@ import { withGlobalState } from '../hocs/withGlobalState';
 
 import '../App.css';
 
-class CardListNoState extends React.Component {
+export class CardListNoState extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
