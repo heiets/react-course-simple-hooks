@@ -38,11 +38,9 @@ const CardNoMemo = ({ city, setCityCoord }) => {
         history.push('/home');
     };
 
-    const handleOnLinkClick = (event) => {
-        event.preventDefault();
+    const handleOnLinkClick = () => {
         dispatch({
             type: 'EDIT_CITY_DONE',
-            payload: city,
         })
     };
 

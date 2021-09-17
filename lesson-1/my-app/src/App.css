@@ -118,6 +118,10 @@
   align-items: center;
 }
 
+.SingleCityWrap .Select {
+  margin-top: 24px;
+}
+
 .DailyCards {
   margin-top: 24px;
   display: flex;
