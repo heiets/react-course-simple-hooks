@@ -10,6 +10,11 @@ export const DailyCards = ({ daily }) => {
     const handleOnChange = (event) => {
         setOrderBy(event.target.value);
     };
+
+    let sortedCitiesList = daily.sort((a, b) => a.dt - b.dt);
+    if (orderBy === 'by_date_desc') {
+        sortedCitiesList.reverse();
+    }
     return (
         <>
             <select className="Select" value={orderBy} onChange={handleOnChange}>
@@ -17,7 +22,7 @@ export const DailyCards = ({ daily }) => {
                 <option value="by_date_desc">By date desc</option>
             </select>
             <div className="DailyCards">
-                {daily.map(dailyCard => <DailyCard dailyCard={dailyCard} key={dailyCard.dt} />)}
+                {sortedCitiesList.map(dailyCard => <DailyCard dailyCard={dailyCard} key={dailyCard.dt} />)}
             </div>
         </>
     )
