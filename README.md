@@ -1,1 +1,1 @@
-# react-course-simple-hooks
+# React course for udemy
